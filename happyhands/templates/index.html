@@ -1,0 +1,250 @@
+  {% extends "base.html" %}
+  {% load static %}
+   {% block content %}   
+    <!-- ============================ Banner Section start =============================== -->
+<div class="banner">
+    <div class="container container-lg">
+        <div class="banner-item rounded-24 overflow-hidden position-relative arrow-center">
+            <a href="#product" class="scroll-down w-84 h-84 text-center flex-center bg-main-600 rounded-circle border border-5 text-white border-white position-absolute start-50 translate-middle-x bottom-0 hover-bg-main-800">
+                <span class="icon line-height-0"><i class="ph ph-caret-double-down"></i></span> 
+            </a>
+            
+            <img src="{% static "assets/images/bg/banner-bg.png" %}" alt="" class="banner-img position-absolute inset-block-start-0 inset-inline-start-0 w-100 h-100 z-n1 object-fit-cover rounded-24">
+
+            <div class="flex-align">
+                <button type="button" id="banner-prev" class="slick-prev slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1">
+                    <i class="ph ph-caret-left"></i>
+                </button>
+                <button type="button" id="banner-next" class="slick-next slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1">
+                    <i class="ph ph-caret-right"></i>
+                </button>
+            </div>
+
+            <div class="banner-slider">
+                <div class="banner-slider__item">   
+                    <div class="banner-slider__inner flex-between position-relative">
+                        <div class="banner-item__content">
+                            <h1 class="banner-item__title wow bounceInDown"  data-wow-duration="1s">Pure Refreshment, Zero Sugar
+                                Sip the Goodness, Stay Healthy</h1>
+                            <a href="#" class="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 wow bounceInUp"  data-wow-duration="1s">
+                              Shop Now <span class="icon text-xl d-flex"><i class="ph ph-shopping-cart-simple"></i>   </span> 
+                            </a>
+                        </div>
+                        <div class="banner-item__thumb wow bounceIn" data-wow-duration="1s" data-tilt data-tilt-max="12" data-tilt-speed="500" data-tilt-perspective="5000" data-tilt-scale="1.06">
+                            <img src="{% static "assets/images/Product/6.png" %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-slider__item">   
+                    <div class="banner-slider__inner flex-between position-relative">
+                        <div class="banner-item__content">
+                            <h1 class="banner-item__title wow bounceInDown"  data-wow-duration="1s">Naturally Sweet, Sugar-Free Treat
+                                Healthy Sips for a Happier You</h1>
+                            <a href="#" class="btn btn-main d-inline-flex align-items-center rounded-pill gap-8 wow bounceIn"  data-wow-duration="1s">
+                                 Shop Now <span class="icon text-xl d-flex"><i class="ph ph-shopping-cart-simple"></i>   </span> 
+                            </a>
+                        </div>
+                        <div class="banner-item__thumb wow bounceIn" data-wow-duration="1s" data-tilt data-tilt-max="12" data-tilt-speed="500" data-tilt-perspective="5000" data-tilt-scale="1.06">
+                            <img src="{% static "assets/images/Product/5.png" %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<!-- ============================ Banner Section End =============================== -->
+
+    <!-- ============================ Feature Section start =============================== -->
+<div class="feature" id="featureSection">
+    <div class="container container-lg">
+        <div class="position-relative arrow-center">
+            <div class="flex-align">
+                <button type="button" id="feature-item-wrapper-prev" class="slick-prev slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1" >
+                    <i class="ph ph-caret-left"></i>
+                </button>
+                <button type="button" id="feature-item-wrapper-next" class="slick-next slick-arrow flex-center rounded-circle bg-white text-xl hover-bg-main-600 hover-text-white transition-1" >
+                    <i class="ph ph-caret-right"></i>
+                </button>
+            </div>
+            <div class="feature-item-wrapper">
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="400">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/1.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 1</a></h6>
+                    </div>
+                </div>
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="600">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/2.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 2</a></h6>
+                    </div>
+                </div>
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/3.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 3</a></h6>
+                    </div>
+                </div>
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/4.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 4</a></h6>
+                    </div>
+                </div>
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/12.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 5</a></h6>
+                    </div>
+                </div>
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/6.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 6</a></h6>
+                    </div>
+                </div>
+                <div class="feature-item text-center wow bounceIn" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="feature-item__thumb rounded-circle">
+                        <a href="#" class="w-100 h-100 flex-center">
+                            <img src="{% static "assets/images/Product/14.png" %}" alt="">
+                        </a>
+                    </div>
+                    <div class="feature-item__content mt-16">
+                        <h6 class="text-lg mb-8"><a href="#" class="text-inherit">Product 7</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ Feature Section End =============================== -->
+
+<div class="product-container" id="product">
+    <div class="product-wrapper">
+        <h2 class="product-title">Recommended All Items for you</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/1.png" %}" alt="Product 1">
+                <h3 class="product-name">Juice 1</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/2.png" %}" alt="Product 2">
+                <h3 class="product-name">Juice 2</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/3.png" %}" alt="Product 3">
+                <h3 class="product-name">Juice 3</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/4.png" %}" alt="Product 4">
+                <h3 class="product-name">Juice 4</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+          
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/6.png" %}" alt="Product 2">
+                <h3 class="product-name">Juice 5</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+         
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/8.png" %}" alt="Product 4">
+                <h3 class="product-name">Juice 6</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/9.png" %}" alt="Product 1">
+                <h3 class="product-name">Juice 7</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/10.png" %}" alt="Product 2">
+                <h3 class="product-name">Juice 8</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/11.png" %}" alt="Product 3">
+                <h3 class="product-name">Juice 9</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static "assets/images/Product/12.png" %}" alt="Product 4">
+                <h3 class="product-name">Juice 10</h3>
+                <button class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<div class="about-container" style="margin-top: 20px;" >
+    <div class="about-content">
+        <h2>Welcome to Happy Hands</h2>
+        <p>At <span class="highlight">Happy Hands</span>, we are committed to bringing you the best sugar-free juices that are both delicious and healthy. Crafted with natural ingredients and free from artificial additives, our drinks are perfect for your everyday refreshment.</p>
+        <p>Each pack is designed for convenience, making it easy to enjoy a refreshing sip wherever you go. Stay healthy, stay happy – with <span class="highlight">Happy Hands</span>.</p>
+        <img class="about-image" src="{% static "assets/images/Product/14.png" %}" alt="Happy Hands Sugar-Free Juice">
+    </div>
+</div>
+
+    <!-- ========================= Delivery Section Start ================================ -->
+<div class="delivery-section" style="margin-top: 20px;">
+    <div class="container container-lg">
+        <div class="delivery position-relative rounded-16 bg-main-600 p-16 flex-align gap-16 flex-wrap z-1">
+            <img src="{% static "assets/images/bg/delivery-bg.png" %}" alt="" class="position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100">   
+            <div class="row align-items-center">
+               
+                <div class="col-md-5 col-sm-7">
+                    <div class="text-center">
+                        <h4 class="text-white mb-8" data-aos="fade-down">Get Fresh, Sugar-Free Juices Delivered to Your Doorstep!</h4>
+                        <p class="text-white" data-aos="zoom-in">Next-Day Delivery | Order Above ₹500</p>
+                        <a href="#" class="mt-16 btn btn-main-two fw-medium d-inline-flex align-items-center rounded-pill gap-8" data-aos="fade-up" tabindex="0">
+                            Order Now
+                            <span class="icon text-xl d-flex"><i class="ph ph-arrow-right"></i></span> 
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-5 d-sm-block d-none" data-aos="zoom-out" data-aos-duration="800">
+                    <img src="{% static "assets/images/Product/14.png" %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= Delivery Section End ================================ -->
+
+
+   {% endblock content %}
