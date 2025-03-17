@@ -10240,9 +10240,9 @@ input:focus-visible {
     }
 
     .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
+        /* display: grid; */
+        /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px; */
     }
 
     .product-card {
@@ -10276,7 +10276,7 @@ input:focus-visible {
     }
 
     .product-name {
-        margin: 15px 0;
+        margin: 15px 0 8px;
         font-size: 20px;
         font-weight: 600;
     }

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from .forms import RegistrationForm
 from django.contrib import messages
+from . models import product,cart,order
+
 
 
 
@@ -9,7 +11,12 @@ def home(request):
     return render(request, "index.html")
 
 def products(request):
-    return render(request, "products.html")
+    post=product.objects.all()
+    print(post)
+    content={
+       "post":post
+    }
+    return render(request, "products.html",content)
 
 def about(request):
     return render(request, "about.html")
