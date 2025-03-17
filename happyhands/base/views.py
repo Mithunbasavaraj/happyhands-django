@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from .forms import RegistrationForm
+from django.contrib import messages
+
 
 
 def home(request):
@@ -9,8 +11,15 @@ def home(request):
 def products(request):
     return render(request, "products.html")
 
+def about(request):
+    return render(request, "about.html")
+
+def contact(request):
+    return render(request, "contact.html")
+
 def as_view(request):
     logout(request)
+    messages.success(request, "Logout Success")
     return redirect("base:login")
 
 def authView(request):
@@ -18,13 +27,15 @@ def authView(request):
   form = RegistrationForm(request.POST or None)
   if form.is_valid():
    form.save()
+   messages.success(request, "Register Success")
    return redirect("base:login")
  else:
   form = RegistrationForm()
  return render(request, "registration/signup.html", {"form": form})
 
-#todo
 
+
+    
 # create products
 # display products
 # product details

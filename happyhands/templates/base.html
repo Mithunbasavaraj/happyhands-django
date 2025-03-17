@@ -1,12 +1,14 @@
  {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" >
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
-    <title>Happy Hands</title>
+    <title>Happy Hands {% block title %} {% endblock title %} </title>
+    <meta name="keywords" content="Happy Hands   {% block keywords %}{% endblock keywords %}" />
+    <meta name="description" content="Happy Hands   {% block description %}{% endblock description %}" />
     <!-- Favicon -->
     <link rel="icon"  href="{% static "assets/images/favicon/favicon.ico" %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static "assets/images/favicon/apple-touch-icon.png" %}" >
@@ -56,7 +58,7 @@
   </button>
   <div class="container">
     <div class="position-relative">
-      <input type="text" class="form-control py-16 px-24 text-xl rounded-pill pe-64" placeholder="Search for a product or brand">
+      <input type="text" class="form-control py-16 px-24 text-xl rounded-pill pe-64" placeholder="Search for a product ">
       <button type="submit" class="w-48 h-48 bg-main-600 rounded-circle flex-center text-xl text-white position-absolute top-50 translate-middle-y inset-inline-end-0 me-8">
         <i class="ph ph-magnifying-glass"></i>
       </button>
@@ -69,21 +71,21 @@
 <div class="mobile-menu scroll-sm d-lg-none d-block">
     <button type="button" class="close-button"> <i class="ph ph-x"></i> </button>
     <div class="mobile-menu__inner">
-        <a href="index.html" class="mobile-menu__logo">
+        <a href="/" class="mobile-menu__logo">
             <img src="{% static "assets/images/logo/logo.png" %}" alt="Logo">
         </a>
         <div class="mobile-menu__menu">
             <!-- Nav Menu Start -->
 <ul class="nav-menu flex-align nav-menu--mobile">
     <li class="nav-menu__item">
-        <a href="index.html" class="nav-menu__link">Home</a>
+        <a href="/" class="nav-menu__link">Home</a>
     </li>
     <li class="nav-menu__item">
-        <a href="about.html" class="nav-menu__link">About Us</a>
+        <a href="/about" class="nav-menu__link">About Us</a>
     </li>
     </li>
     <li class="nav-menu__item">
-        <a href="contact.html" class="nav-menu__link">Contact Us</a>
+        <a href="/contact" class="nav-menu__link">Contact Us</a>
     </li>
 </ul>
 <!-- Nav Menu End -->
@@ -98,7 +100,7 @@
     <div class="container container-lg">
         <div class="flex-between flex-wrap gap-8">
             <ul class="flex-align flex-wrap d-none d-md-flex">
-                <li class="border-right-item"><a href="about.html" class="text-white text-sm hover-text-decoration-underline">About us</a></li>
+                <li class="border-right-item"><a href="/about" class="text-white text-sm hover-text-decoration-underline">About us</a></li>
                 <li class="border-right-item"><a href="#" class="text-white text-sm hover-text-decoration-underline">Privacy Policy</a></li>
                 <li class="border-right-item"><a href="#" class="text-white text-sm hover-text-decoration-underline">Returns Policy</a></li>
             </ul>
@@ -145,7 +147,7 @@
         <nav class="header-inner flex-between">
             <!-- Logo Start -->
             <div class="logo">
-                <a href="index.html" class="link">
+                <a href="/" class="link">
                     <img src="{% static "assets/images/logo/logo.png" %}" alt="Logo">
                 </a>
             </div>
@@ -155,13 +157,13 @@
             <!-- Header Middle Right start -->
             <div class="header-right flex-align d-lg-block d-none">
                 <div class="flex-align flex-wrap gap-12">
-    <a href="#" class="flex-align gap-4 item-hover">
-        <span class="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
-            <i class="ph ph-heart"></i>
-          
-        </span>
-        <span class="text-md text-gray-500 item-hover__text d-none d-lg-flex">Wishlist</span>
-    </a>
+                     <button type="button" class="search-icon flex-align gap-4 item-hover">
+                                <span class="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
+                                    <i class="ph ph-magnifying-glass"></i>
+                                </span>
+                                <span class="text-md text-gray-500 item-hover__text d-none d-lg-flex">Search</span>
+                            </button>
+   
     <a href="cart.html" class="flex-align gap-4 item-hover">
         <span class="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
             <i class="ph ph-shopping-cart-simple"></i>
@@ -195,13 +197,13 @@
                     <!-- Nav Menu Start -->
 <ul class="nav-menu flex-align ">
     <li class="nav-menu__item">
-        <a href="index.html" class="nav-menu__link">Home</a>
+        <a href="/" class="nav-menu__link">Home</a>
     </li>
     <li class="nav-menu__item">
-        <a href="about.html" class="nav-menu__link">About Us</a>
+        <a href="/about" class="nav-menu__link">About Us</a>
     </li>
     <li class="nav-menu__item">
-        <a href="contact.html" class="nav-menu__link">Contact Us</a>
+        <a href="/contact" class="nav-menu__link">Contact Us</a>
     </li>
 </ul>
 <!-- Nav Menu End -->
@@ -217,12 +219,12 @@
                 </a>
                 <div class="me-16 d-lg-none d-block">
                     <div class="flex-align flex-wrap gap-12">
-    <a href="#" class="flex-align gap-4 item-hover">
-        <span class="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
-            <i class="ph ph-heart"></i>
-        </span>
-        <span class="text-md text-gray-500 item-hover__text d-none d-lg-flex">Wishlist</span>
-    </a>
+                         <button type="button" class="search-icon flex-align d-lg-none d-flex gap-4 item-hover">
+                                <span class="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
+                                    <i class="ph ph-magnifying-glass"></i>
+                                </span>
+                            </button>
+    
     <a href="cart.html" class="flex-align gap-4 item-hover">
         <span class="text-2xl text-gray-700 d-flex position-relative me-6 mt-6 item-hover__text">
             <i class="ph ph-shopping-cart-simple"></i>
@@ -245,7 +247,14 @@
     </div>
 </header>
 <!-- ==================== Header End Here ==================== -->
-
+  {% for message in messages %}
+   <div id="message" class="container">
+    <div class="alert {{ message.tags }} alert-dismissible shadow fade show" role="alert">
+        {{ message | safe }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    </div>
+{% endfor %}
 
  {% block content %}
  
@@ -313,7 +322,7 @@
         <div class="footer-item-wrapper d-flex align-items-start flex-wrap">
             <div class="footer-item" data-aos="fade-up" data-aos-duration="200">
                 <div class="footer-item__logo">
-                    <a href="index.html"> <img src="{% static "assets/images/logo/logo.png" %}" alt="Happy Hands Logo"></a>
+                    <a href="/"> <img src="{% static "assets/images/logo/logo.png" %}" alt="Happy Hands Logo"></a>
                 </div>
                 <p class="mb-24">Happy Hands brings you the perfect blend of  <br>
                     taste and health with our sugar-free juices. <br>
@@ -324,9 +333,9 @@
             <div class="footer-item" data-aos="fade-up" data-aos-duration="400">
                 <h6 class="footer-item__title">Important Links</h6>
                 <ul class="footer-menu">
-                    <li class="mb-16"><a href="index.html" class="text-gray-600 hover-text-main-600">Home</a></li>
-                    <li class="mb-16"><a href="about.html" class="text-gray-600 hover-text-main-600">About Us</a></li>
-                    <li class="mb-16"><a href="contact.html" class="text-gray-600 hover-text-main-600">Contact Us</a></li>
+                    <li class="mb-16"><a href="/" class="text-gray-600 hover-text-main-600">Home</a></li>
+                    <li class="mb-16"><a href="/about" class="text-gray-600 hover-text-main-600">About Us</a></li>
+                    <li class="mb-16"><a href="/contact" class="text-gray-600 hover-text-main-600">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-item" data-aos="fade-up" data-aos-duration="400">
@@ -343,7 +352,6 @@
                 <ul class="footer-menu">
                     <li class="mb-16"><a href="account.html" class="text-gray-600 hover-text-main-600">My Account</a></li>
                     <li class="mb-16"><a href="#" class="text-gray-600 hover-text-main-600">Order History</a></li>
-                    <li><a href="#" class="text-gray-600 hover-text-main-600">Wishlist</a></li>
                 </ul>
             </div>
 

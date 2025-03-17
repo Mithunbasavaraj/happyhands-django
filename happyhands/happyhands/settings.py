@@ -139,3 +139,14 @@ MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL ="base:home"
 LOGOUT_REDIRECT_URL ="base:login"
+
+
+from django.contrib import messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}

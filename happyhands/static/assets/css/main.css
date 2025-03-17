@@ -10334,3 +10334,9 @@ input:focus-visible {
     }
 
    
+    #message{
+        position: absolute;
+        top: 8px;
+        right: 0;
+        width: 50%;
+    }

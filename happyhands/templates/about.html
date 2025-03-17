@@ -1,0 +1,34 @@
+  {% extends "base.html" %}
+  {% load static %}
+  {% block content %}   
+    <!-- ========================= Breadcrumb Start =============================== -->
+   <div class="breadcrumb mb-0 py-26 bg-main-two-50">
+    <div class="container container-lg">
+        <div class="breadcrumb-wrapper flex-between flex-wrap gap-16">
+            <h6 class="mb-0">About</h6>
+            <ul class="flex-align gap-8 flex-wrap">
+                <li class="text-sm">
+                    <a href="/" class="text-gray-900 flex-align gap-8 hover-text-main-600">
+                        <i class="ph ph-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="flex-align">
+                    <i class="ph ph-caret-right"></i>
+                </li>
+                <li class="text-sm text-main-600"> About </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="about-container" style="" >
+    <div class="about-content">
+        <h2>Welcome to Happy Hands</h2>
+        <p>At <span class="highlight">Happy Hands</span>, we are committed to bringing you the best sugar-free juices that are both delicious and healthy. Crafted with natural ingredients and free from artificial additives, our drinks are perfect for your everyday refreshment.</p>
+        <p>Each pack is designed for convenience, making it easy to enjoy a refreshing sip wherever you go. Stay healthy, stay happy – with <span class="highlight">Happy Hands</span>.</p>
+        <img class="about-image" src="{% static "assets/images/Product/14.png" %}" alt="Happy Hands Sugar-Free Juice">
+    </div>
+</div>
+<!-- ========================= Breadcrumb End =============================== -->
+
+   {% endblock content %}
