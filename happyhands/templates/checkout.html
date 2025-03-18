@@ -1,0 +1,162 @@
+  {% extends "base.html" %}
+  {% load static %}
+  {% block content %}   
+    <!-- ========================= Breadcrumb Start =============================== -->
+<div class="breadcrumb mb-0 py-26 bg-main-two-50">
+    <div class="container container-lg">
+        <div class="breadcrumb-wrapper flex-between flex-wrap gap-16">
+            <h6 class="mb-0">Checkout</h6>
+            <ul class="flex-align gap-8 flex-wrap">
+                <li class="text-sm">
+                    <a href="index.html" class="text-gray-900 flex-align gap-8 hover-text-main-600">
+                        <i class="ph ph-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="flex-align">
+                    <i class="ph ph-caret-right"></i>
+                </li>
+                <li class="text-sm text-main-600"> Checkout </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- ========================= Breadcrumb End =============================== -->
+
+    <!-- ================================= Checkout Page Start ===================================== -->
+ <section class="checkout py-80">
+    <div class="container container-lg">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8">
+                <form action="#" class="pe-xl-5">
+                    <div class="row gy-3">
+                        <div class="col-sm-6 col-xs-6">
+                            <input type="text" class="common-input border-gray-100" placeholder="First Name">
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <input type="text" class="common-input border-gray-100" placeholder="Last Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="common-input border-gray-100" placeholder="House number and street name">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="common-input border-gray-100" placeholder="Apartment, etc. (Optional)">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="common-input border-gray-100" placeholder="City">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="common-input border-gray-100" placeholder="Pin Code">
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="common-input border-gray-100" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="common-input border-gray-100" placeholder="Email Address">
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="my-40">
+                                <h6 class="text-lg mb-24">Additional Information</h6>
+                                <input type="text" class="common-input border-gray-100" placeholder="Notes about your order, e.g. special notes for delivery.">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-3 col-lg-4">
+                <div class="checkout-sidebar">
+                    <div class="bg-color-three rounded-8 p-24 text-center">
+                        <span class="text-gray-900 text-xl fw-semibold">Your Orders</span>
+                    </div>
+
+                    <div class="border border-gray-100 rounded-8 px-24 py-40 mt-24">
+                        <div class="mb-32 pb-32 border-bottom border-gray-100 flex-between gap-8">
+                            <span class="text-gray-900 fw-medium text-xl font-heading-two">Product</span>
+                            <span class="text-gray-900 fw-medium text-xl font-heading-two">Subtotal</span>
+                        </div>
+
+                        <div class="flex-between gap-24 mb-32">
+                            <div class="flex-align gap-12">
+                                <span class="text-gray-900 fw-normal text-md font-heading-two w-144">Juice 1</span>
+                                <span class="text-gray-900 fw-normal text-md font-heading-two"><i class="ph-bold ph-x"></i></span>
+                                <span class="text-gray-900 fw-semibold text-md font-heading-two">1</span>
+                            </div>
+                            <span class="text-gray-900 fw-bold text-md font-heading-two">₹150.00</span>
+                        </div>
+                        <div class="flex-between gap-24 mb-32">
+                            <div class="flex-align gap-12">
+                                <span class="text-gray-900 fw-normal text-md font-heading-two w-144">Juice 2</span>
+                                <span class="text-gray-900 fw-normal text-md font-heading-two"><i class="ph-bold ph-x"></i></span>
+                                <span class="text-gray-900 fw-semibold text-md font-heading-two">1</span>
+                            </div>
+                            <span class="text-gray-900 fw-bold text-md font-heading-two">150.00</span>
+                        </div>
+                        <div class="flex-between gap-24 mb-32">
+                            <div class="flex-align gap-12">
+                                <span class="text-gray-900 fw-normal text-md font-heading-two w-144">Juice 3</span>
+                                <span class="text-gray-900 fw-normal text-md font-heading-two"><i class="ph-bold ph-x"></i></span>
+                                <span class="text-gray-900 fw-semibold text-md font-heading-two">1</span>
+                            </div>
+                            <span class="text-gray-900 fw-bold text-md font-heading-two">₹150.00</span>
+                        </div>
+                        <div class="flex-between gap-24 mb-32">
+                            <div class="flex-align gap-12">
+                                <span class="text-gray-900 fw-normal text-md font-heading-two w-144">Juice 4</span>
+                                <span class="text-gray-900 fw-normal text-md font-heading-two"><i class="ph-bold ph-x"></i></span>
+                                <span class="text-gray-900 fw-semibold text-md font-heading-two">1</span>
+                            </div>
+                            <span class="text-gray-900 fw-bold text-md font-heading-two">₹150.00</span>
+                        </div>
+
+
+                        <div class="border-top border-gray-100 pt-30  mt-30">
+                            <div class="mb-32 flex-between gap-8">
+                                <span class="text-gray-900 font-heading-two text-xl fw-semibold">Subtotal</span>
+                                <span class="text-gray-900 font-heading-two text-md fw-bold">₹600.00</span>
+                            </div>
+                            <div class="mb-32 flex-between gap-8">
+                                <span class="text-gray-900 font-heading-two text-xl fw-semibold">GST</span>
+                                <span class="text-gray-900 font-heading-two text-md fw-bold">₹200.00</span>
+                            </div>
+                            <div class="mb-0 flex-between gap-8">
+                                <span class="text-gray-900 font-heading-two text-xl fw-semibold">Total</span>
+                                <span class="text-gray-900 font-heading-two text-md fw-bold">₹800.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-32">
+                        <div class="payment-item">
+                            <div class="form-check common-check common-radio py-16 mb-0">
+                                <input class="form-check-input" type="radio" name="payment" id="payment1" checked>
+                                <label class="form-check-label fw-semibold text-neutral-600" for="payment1"> Bank transfer</label>
+                            </div>
+                         
+                        </div>
+                        <div class="payment-item">
+                            <div class="form-check common-check common-radio py-16 mb-0">
+                                <input class="form-check-input" type="radio" name="payment" id="payment2">
+                                <label class="form-check-label fw-semibold text-neutral-600" for="payment2">UPI payments</label>
+                            </div>
+                           
+                        </div>
+                        <div class="payment-item">
+                            <div class="form-check common-check common-radio py-16 mb-0">
+                                <input class="form-check-input" type="radio" name="payment" id="payment3">
+                                <label class="form-check-label fw-semibold text-neutral-600" for="payment3">Cash on delivery</label>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <a href="checkout.html" class="btn btn-main mt-40 py-18 w-100 rounded-8 mt-56">Place Order</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+<!-- ================================= Checkout Page End ===================================== -->
+
+   {% endblock content %}

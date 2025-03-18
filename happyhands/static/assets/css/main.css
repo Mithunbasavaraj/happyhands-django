@@ -1059,7 +1059,7 @@ input[type=number] {
 }
 
 .table thead tr {
-    border-bottom: 1px solid hsl(var(--white)/0.2);
+    border-bottom: 1px solid #808080;
 }
 
 .table thead tr th {
@@ -1070,7 +1070,7 @@ input[type=number] {
 }
 
 .table tbody tr {
-    border-bottom: 1px solid hsl(var(--white)/0.2);
+    border-bottom: 1px solid #808080;
 }
 
 .table tbody tr:last-child {
@@ -10340,3 +10340,7 @@ input:focus-visible {
         right: 0;
         width: 50%;
     }
+    /* ***************** */
+
+ 
+
