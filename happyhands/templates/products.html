@@ -18,7 +18,7 @@
                                 <span class="text-heading text-md fw-semibold "> ₹{{posts.price}} <span class="text-gray-800 fw-normal text-sm">{{posts.quantity}}ML</span> </span>
                             </div>
 
-                <a href="" class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now</a>
+                <a href="{% url 'base:product_details' posts.slug posts.id  %}" class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now {{posts.id}}</a>
             </div>
             {% endfor %}
             

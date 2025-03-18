@@ -69,12 +69,17 @@ def authView(request):
  return render(request, "registration/signup.html", {"form": form})
 
 
-
-
-
 # product details
-def product_details(request):
-    return render(request, "product-details.html")
+def product_details(request,slug,pk):
+    post=product.objects.get(id=pk)
+    content={
+       "post":post
+    }
+    return render(request, "product-details.html",content)
+
+
+
+
 
 # add to cart
 def cart_page(request):

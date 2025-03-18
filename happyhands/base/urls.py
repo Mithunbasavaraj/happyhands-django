@@ -8,7 +8,7 @@ urlpatterns = [
     path("contact/",views.contact, name="contact"),
     path("signup/",views.authView, name="authView"),
     path("accounts/",include("django.contrib.auth.urls")),
-    path('product-details/', views.product_details, name='product_details'),
+    path('product-details/<slug:slug>/<int:pk>', views.product_details, name='product_details'),
    
     path('cart-page/', views.cart_page, name='cart_page'),
     path('add-to-cart/', views.add_to_cart, name='add_to_cart'),
