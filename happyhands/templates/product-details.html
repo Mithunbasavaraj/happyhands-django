@@ -1,8 +1,9 @@
   {% extends "base.html" %}
   {% load static %}
-  {% block title %} {% endblock title %}
-  {% block keywords %}{% endblock keywords %}
-  {% block description %}{% endblock description %}
+  {% block title %}{{post.product_name}} {{post.juice_type}} {% endblock title %}
+  {% block keywords %}{{post.key_words}} {{post.juice_type}}{% endblock keywords %}
+  {% block description %}{{post.juice_type}} {{post.key_words}}{% endblock description %}
+  
   {% block content %}   
     <!-- ========================= Breadcrumb Start =============================== -->
 <div class="breadcrumb mb-0 py-26 bg-main-two-50">
@@ -140,6 +141,7 @@
                     <div class="col-xl-6">
                         <div class="product-details__content">
                             <h5 class="mb-12">{{post.product_name}}</h5>
+                            <p>{{post.juice_type}}</p>
                            
                             <span class="mt-32 pt-32 text-gray-700 border-top border-gray-100 d-block"></span>
                             <p class="text-gray-700">{{post.product_description}}</p>
@@ -157,13 +159,16 @@
 
                             <span class="text-gray-900 d-block mb-8">Quantity:</span>
                             <div class="flex-between gap-16 flex-wrap">
+                              <form method="post" action="{% url 'base:add_to_cart' post.id  %}">
                                 <div class="flex-align flex-wrap gap-16">
                                     <div class="border border-gray-100 rounded-pill py-9 px-16 flex-align">
                                         <button type="button" class="quantity__minus p-4 text-gray-700 hover-text-main-600 flex-center"><i class="ph ph-minus"></i></button>
-                                        <input type="number" class="quantity__input border-0 text-center w-32" value="1">
+                                        <input type="number" readonly class="quantity__input border-0 text-center w-32" value="1" name="unit_qty">
                                         <button type="button" class="quantity__plus p-4 text-gray-700 hover-text-main-600 flex-center"><i class="ph ph-plus"></i></button>
                                     </div>
-                                    <a href="#" class="btn btn-main rounded-pill flex-align d-inline-flex gap-8 px-48"> <i class="ph ph-shopping-cart"></i> Add To Cart</a>
+                                      {% csrf_token %}
+                                    <button class="btn btn-main rounded-pill flex-align d-inline-flex gap-8 px-48"> <i class="ph ph-shopping-cart"></i> Add To Cart</button>
+                                    </form>
                                 </div>
                                 
                                 <div class="flex-align gap-12">
@@ -245,7 +250,7 @@
                         <div class="" id="pills-description" >
                             <div class="mb-40">
                                 <h6 class="mb-24">Product Description</h6>
-                                <p>Wherever celebrations and good times happen, the LAY'S brand will be there just as it has been for more than 75 years. With flavors almost as rich as our history, we have a chip or crisp flavor guaranteed to bring a smile on your face. </p>
+                            <p>{{post.specifications|safe}} </p>
                                
                               
                             </div>
@@ -259,5 +264,32 @@
         </div>
     </div>
 </section>
+<div class="product-container" id="product">
+    <div class="product-wrapper">
+        <h2 class="product-title text-gray-50 ">Recommended All Items for you</h2>
+        <div class="product-grid row justify-content-center">
+
+            {% for posts in re_post  %}
+            
+            <div class="product-card col-12 col-md-3">
+                <img src="{{ posts.image_1.url }}" alt="Product">
+                <h3 class="product-name">{{posts.product_name}}</h3>
+                <div class="product-card__price mt-0 pb-5">
+                                <span class="text-gray-700 text-md fw-semibold text-decoration-line-through"> ₹{{posts.price}} </span>
+                                <span class="text-heading text-md fw-semibold "> ₹{{posts.price}} <span class="text-gray-800 fw-normal text-sm">{{posts.quantity}}ML</span> </span>
+                            </div>
+
+                <a href="{% url 'base:product_details' posts.slug posts.id  %}" class="buy-now"><i class="fas fa-cart-arrow-down"></i> Buy Now {{posts.id}}</a>
+            </div>
+            {% endfor %}
+            
+          
+        </div>
+    </div>
+</div>
 
    {% endblock content %}
+
+   <script>
+
+   </script>

@@ -26,17 +26,16 @@ class product(models.Model):
        return self.product_name
    
 
-  
 
 # cart model
 class cart(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     product=models.ForeignKey(product, on_delete=models.CASCADE)
-    unit_qty= models.IntegerField(default=0,blank=True,)
-    amount  = models.IntegerField(default=0,blank=True,)
+    unit_qty= models.IntegerField(default=0,blank=True)
+    amount  = models.IntegerField(default=0,blank=True)
 
     def __str__(self):
-       return self.user
+       return self.product.product_name
 
 payment_choice=(
     ("online","online"),
@@ -69,10 +68,10 @@ class order(models.Model):
    landmark=models.CharField(max_length=35, default="", blank=True)
    Order_status=models.CharField(max_length = 20, choices = Order_status_choices, default = 'Pending') 
    payment_status=models.CharField(max_length=35, default="", blank=True)
-   j_cart_product = models.IntegerField(default=0,blank=True)
+   j_cart_product = models.TextField(blank=True,default="")
    uuid=models.CharField(max_length=135, default="", blank=True)
    transaction_id=models.CharField(max_length=135, default="", blank=True)
 
    def __str__(self):
-       return self.user
+       return self.user.first_name
 

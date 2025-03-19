@@ -72,50 +72,105 @@ def authView(request):
 # product details
 def product_details(request,slug,pk):
     post=product.objects.get(id=pk)
+    re_post=product.objects.filter(juice_type=post.juice_type)
     content={
-       "post":post
+       "post":post,
+       "re_post":re_post,
     }
     return render(request, "product-details.html",content)
 
 
 
+# add to cart
+@login_required
+def add_to_cart(request,pk):
+    pro=product.objects.get(id=pk) 
+    user=request.user
+    unit_qty=int(request.POST.get("unit_qty"))
+    amount=(pro.price*unit_qty)
+    my_query=cart(user=user,product=pro,amount=amount,unit_qty=unit_qty)
+    my_query.save()
+    messages.success(request, "Added Success")
+    return redirect("base:cart_page")
 
 
 # add to cart
 def cart_page(request):
-    return render(request, "cart-page.html")
+    post=cart.objects.filter(user=request.user)
+    total_qty=post.count()
+    sub_total = sum(post.values_list("amount",flat=True))
+    if post.exists():
+       cart_exists=True
+    else:
+       cart_exists=False
+    content={
+       "post":post,
+       "total_qty":total_qty,
+       "sub_total":sub_total,
+       "cart_exists":cart_exists
+    }
+    return render(request, "cart-page.html",content)
 
-# add to cart
-def add_to_cart(request):
-    return render(request, "cart-page.html")
 
 # remove from cart
-def remove_from_cart(request):
-    return render(request, "cart-page.html")
+def remove_from_cart(request, pk):
+    cart_item = cart.objects.get(id=pk)
+    cart_item.delete()
+    messages.success(request, "Product Deleted")
+    return redirect("base:cart_page")
+
+    
 
 # aty add from cart
-def qty_add(request):
-    return render(request, "cart-page.html")
+def qty_add(request ,pk):
+    qty_input=int(request.POST.get("qty_input"))
+    post=cart.objects.get(id=pk)
+    qty_input=qty_input+1
+    post.amount=qty_input*post.product.price
+    post.unit_qty=qty_input
+    post.save()
+    messages.success(request, "Cart Updated")
+    return redirect("base:cart_page")
 
 # aty sub from cart
-def qty_sub(request):
-    return render(request, "cart-page.html")
+def qty_sub(request,pk):
+    qty_input=int(request.POST.get("qty_input"))
+    post=cart.objects.get(id=pk)
+    if qty_input>1:
+        qty_input=qty_input-1
+        post.amount=qty_input*post.product.price
+        post.unit_qty=qty_input
+        post.save()
+        messages.success(request, "Cart Updated")
+    else:
+       post.delete()
+       messages.success(request, "Product Deleted")
+    return redirect("base:cart_page")
 
-# checkout
-def checkout(request):
-    return render(request, "checkout.html")
 
 # profile
 def profile(request):
-    return render(request, "profile.html")
+    all_orders=order.objects.filter(user=request.user).order_by('-id')
+    content={
+       "all_orders":all_orders,  
+    }
+    return render(request, "profile.html",content)
 
 # order_details
-def order_details(request):
+def order_details(request, pk):
     return render(request, "order-details.html")
 
 # admin_order_view
 def admin_order_view(request):
-    return render(request, "order-view.html")
+    all_orders=order.objects.all().order_by('-id')
+    content={
+       "all_orders":all_orders,    
+    }
+    return render(request, "order-view.html",content)
+
+# checkout
+def checkout(request):
+    return render(request, "checkout.html")
 
 # payment
 
